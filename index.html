@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selamat Ulang Tahun!</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <audio id="popSound" src="sounds/pop.mp3" preload="auto"></audio>
+
+    <marquee behavior="scroll" direction="left" class="marquee">
+      🎉🎂 Selamat ulang tahun yang ke-15! Semoga sehat, bahagia, dan selalu
+      dalam keberkahan! 🎂🎉
+    </marquee>
+
+    <div class="surprise-button-container">
+      <button id="surpriseBtn">🎉 Klik Aku! 🎉</button>
+    </div>
+
+    <canvas id="confettiCanvas"></canvas>
+
+    <div id="balloon-container"></div>
+    <div id="surprise-text"></div>
+
+    <div class="container">
+      <div class="card">
+        <img
+          src="assets/nazwa karimah.jpg"
+          alt="Foto Ulang Tahun"
+          class="birthday-photo"
+        />
+        <h1>🎉 Happy Birthday 🎂</h1>
+        <p>NAZWAA!</p>
+        <button onclick="showMessage()">Klik untuk Kejutan 🎁</button>
+        <p id="extraMessage" class="hidden"></p>
+      </div>
+    </div>
+
+    <div class="wishes-section">
+      <h2>Ucapan Dariku Untukmu 💖</h2>
+      <p>
+        HELLO Happy Birthday buat orang yang paling cantik yang pernah aku
+        kenall🥳.wish you all the best ya,sehat terus, di lancarin
+        rezekinya,sukses dunia akhirat,bisa banggain mama lilis dan papa udin
+        yaa wkwkwk.semoga yang kamu inginkan tersemogakan yaa aamiin,suatu saat
+        nanti jangan lupain aku ya hehehe.maaf belum bisa jadi temen yang
+        terbaik buat kamu. bahagia selalu ya jangan pernah sedih teruss
+        ya.jangan mudah nyerah juga.klw jatuh bangun lagi ya.makasih buat kamu
+        yang selalu menjadi teman yang sangat terbaik buat aku.jangan pernah
+        lupain klw kita juga pernah temenan sedeket ini ya.maaf klw aku suka
+        bikin kamu marah jga ya.ya intinya bahagia selalu buat kamu.dan di umur
+        mu yang baru ini semoga bahagia yaaaa.jan lupa solat 5w nya yaa.aku ga
+        pernah nyesel bertemu dengan mu ingat itu,aku bangga bngt punya temen
+        yang kayak kamu kamu kuat hebat.aku bangga. Dari aku itu aja yaa,makasih
+        ya . sekali lagi HAPPY BIRTHDAY YA SAYANG 💗
+      </p>
+    </div>
+
+    <footer class="classic-footer">
+      <p>&copy;rlyy_dev (firll_seiju0)</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script>
+      function startConfetti() {
+        const duration = 5 * 1000;
+        const end = Date.now() + duration;
+
+        (function frame() {
+          confetti({
+            particleCount: 6,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0 },
+          });
+          confetti({
+            particleCount: 6,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1 },
+          });
+
+          if (Date.now() < end) {
+            requestAnimationFrame(frame);
+          }
+        })();
+      }
+
+      function stopConfetti() {
+        // You could fade out canvas or do nothing
+      }
+    </script>
+  </body>
+</html>
